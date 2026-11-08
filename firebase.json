@@ -1,0 +1,18 @@
+
+{
+  "hosting": {
+    "public": "site_novo",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "redirects": [
+      {
+        "source": "/investidores1.html",
+        "destination": "https://fd-investidores.fd-investidores-rafa.workers.dev/investidores1.html",
+        "type": 302
+      }
+    ]
+  }
+}
