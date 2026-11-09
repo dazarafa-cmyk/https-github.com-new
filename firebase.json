@@ -1,4 +1,3 @@
-
 {
   "hosting": {
     "public": "site_novo",
@@ -8,6 +7,26 @@
       "**/node_modules/**"
     ],
     "redirects": [
+      {
+        "source": "/bi",
+        "destination": "/BI/index.html",
+        "type": 302
+      },
+      {
+        "source": "/bi/",
+        "destination": "/BI/index.html",
+        "type": 302
+      },
+      {
+        "source": "/bi/index.html",
+        "destination": "/BI/index.html",
+        "type": 302
+      },
+      {
+        "source": "/BI/indexbi.html",
+        "destination": "/BI/index.html",
+        "type": 302
+      },
       {
         "source": "/investidores1.html",
         "destination": "https://fd-investidores.fd-investidores-rafa.workers.dev/investidores1.html",
