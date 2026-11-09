@@ -1,0 +1,50 @@
+name: FND - Publicar SITE OFICIAL (producao)
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: fnd-production
+  cancel-in-progress: false
+
+jobs:
+  deploy-production:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Baixar versao aprovada da main
+        uses: actions/checkout@v4
+
+      - name: Configurar Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Validar pasta do site e os dois links
+        shell: bash
+        run: |
+          test -f site_novo/BI/index.html
+          test -f site_novo/index.html
+          python3 - <<'PY'
+          from pathlib import Path
+          html = Path("site_novo/BI/index.html").read_text(encoding="utf-8")
+          assert 'href="https://fedconsulting.tech">Conhecer os dashboards' in html
+          assert 'href="https://fedconsulting.tech">Conheça nossos dashboards' in html
+          print("Links dos dois botoes conferidos.")
+          PY
+
+      - name: Publicar canal LIVE do Firebase Hosting
+        shell: bash
+        env:
+          FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_FED_CONSULTANCY }}
+        run: |
+          test -n "$FIREBASE_SERVICE_ACCOUNT" || { echo "Secret Firebase ausente"; exit 1; }
+          printf '%s' "$FIREBASE_SERVICE_ACCOUNT" > "$RUNNER_TEMP/firebase-key.json"
+          chmod 600 "$RUNNER_TEMP/firebase-key.json"
+          export GOOGLE_APPLICATION_CREDENTIALS="$RUNNER_TEMP/firebase-key.json"
+          npx --yes firebase-tools@15.34.2 deploy --only hosting --project fed-consultancy --non-interactive
