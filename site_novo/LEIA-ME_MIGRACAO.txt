@@ -1,0 +1,11 @@
+PACOTE ESTATICO — F&D CONSULTANCY
+
+Conteúdo preparado para publicação no Firebase Hosting. Envie o conteúdo desta pasta como diretório público.
+
+O que foi removido: instalação WordPress, scripts PHP e configurações/arquivos de banco de dados, logs, cópias antigas e arquivos da pasta Investidores protegida por senha na hospedagem anterior. O arquivo original Backup FED.zip não foi alterado.
+
+A página investidores1.html foi substituída por uma página informativa de solicitação de acesso; os documentos restritos não foram incluídos. Páginas HTML estáticas de BI foram mantidas. Recursos que dependam de PHP/banco de dados precisam de uma implementação separada.
+
+Compatibilidade: BI/indexbi.html encaminha para bi/index.html, preservando o endereço antigo. Links HTML que apontavam ao próprio domínio foram convertidos para caminhos locais para funcionarem durante a validação no endereço temporário do Firebase.
+
+Antes de apontar o domínio definitivo, valide páginas, formulários, links e arquivos grandes no endereço temporário do Firebase.

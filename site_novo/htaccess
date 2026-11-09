@@ -1,0 +1,2 @@
+# Prioriza o index.html (esta página) antes do WordPress
+DirectoryIndex index.html index.php

@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>F&D Insights | Artigos Autorais sobre Finanças, Estratégia e Negócios</title>
+<meta name="description" content="F&D Insights reúne artigos autorais da F&D Consultancy sobre finanças, M&A, reestruturação, governança, estratégia, performance, mercado e desenvolvimento de negócios.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="theme-color" content="#0A1526">
+<link rel="canonical" href="/insights.html">
+<link rel="icon" href="/images/img1.png">
+
+<meta property="og:locale" content="pt_BR">
+<meta property="og:type" content="website">
+<meta property="og:title" content="F&D Insights | Inteligência aplicada à decisão empresarial">
+<meta property="og:description" content="Artigos autorais da F&D Consultancy com análises próprias sobre movimentos de mercado e seus impactos sobre estratégia, finanças, performance e geração de valor.">
+<meta property="og:url" content="https://fedconsultancy.com.br/insights.html">
+<meta property="og:site_name" content="F&D Financial and Business Development Consultancy">
+
+<style>
+:root{
+  --navy-1000:#07111f;
+  --navy-950:#0a1526;
+  --navy-900:#10213d;
+  --navy-850:#142844;
+  --navy-800:#193150;
+  --navy-700:#28486f;
+  --gold:#c9a84c;
+  --gold-2:#e5ca77;
+  --gold-3:#f1dda2;
+  --cream:#f7f4ed;
+  --paper:#ffffff;
+  --ink:#17202e;
+  --slate:#596579;
+  --muted:#8b96a7;
+  --line:rgba(16,33,61,.12);
+  --line-dark:rgba(255,255,255,.14);
+  --shadow:0 22px 60px -28px rgba(7,17,31,.42);
+  --shadow-soft:0 14px 38px -24px rgba(7,17,31,.28);
+  --radius:18px;
+  --container:1180px;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  color:var(--ink);
+  background:var(--paper);
+  font-family:"Segoe UI",Arial,Helvetica,sans-serif;
+  line-height:1.62;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+body.menu-open{overflow:hidden}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+h1,h2,h3,h4,p{margin:0}
+button{font:inherit}
+.container{width:min(var(--container),calc(100% - 40px));margin-inline:auto}
+.section{padding:clamp(4.5rem,8vw,7rem) 0}
+.section-soft{background:var(--cream)}
+.section-dark{background:var(--navy-900);color:#fff}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:.65rem;margin-bottom:1rem;
+  color:#927328;font-size:.76rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase
+}
+.eyebrow::before{content:"";width:28px;height:2px;background:var(--gold)}
+.eyebrow.light{color:var(--gold-2)}
+
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.6rem;
+  min-height:50px;padding:.85rem 1.45rem;border:1.5px solid transparent;border-radius:999px;
+  font-weight:750;font-size:.95rem;transition:.22s ease;cursor:pointer
+}
+.btn:hover{transform:translateY(-2px)}
+.btn-gold{background:var(--gold);color:var(--navy-1000);box-shadow:0 12px 28px -16px rgba(201,168,76,.85)}
+.btn-gold:hover{background:var(--gold-2)}
+.btn-navy{background:var(--navy-900);color:#fff}
+.btn-navy:hover{background:var(--navy-700)}
+.btn-outline-dark{border-color:rgba(16,33,61,.22);color:var(--navy-900);background:#fff}
+.btn-outline-dark:hover{border-color:var(--gold);color:#80641e}
+a:focus-visible,button:focus-visible{outline:3px solid var(--gold-2);outline-offset:3px}
+
+/* NAV */
+.nav{
+  position:fixed;inset:0 0 auto;z-index:100;padding:1rem 0;
+  background:rgba(7,17,31,.96);backdrop-filter:blur(14px);
+  box-shadow:0 12px 30px -22px #000
+}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:1.5rem}
+.nav-logo img{height:48px;width:auto;max-width:245px;object-fit:contain}
+.nav-links{display:flex;align-items:center;gap:clamp(.75rem,1.35vw,1.35rem)}
+.nav-links>a:not(.btn){
+  color:#fff;font-size:.86rem;font-weight:650;opacity:.88;
+  padding:.35rem 0;border-bottom:2px solid transparent
+}
+.nav-links>a:not(.btn):hover,.nav-links>a.active{opacity:1;border-color:var(--gold)}
+.nav-toggle{
+  display:none;width:42px;height:42px;align-items:center;justify-content:center;
+  color:#fff;background:transparent;border:0;cursor:pointer
+}
+.nav-toggle span,.nav-toggle span::before,.nav-toggle span::after{
+  display:block;width:24px;height:2px;background:#fff;position:relative;transition:.2s
+}
+.nav-toggle span::before,.nav-toggle span::after{content:"";position:absolute;left:0}
+.nav-toggle span::before{top:-7px}.nav-toggle span::after{top:7px}
+
+/* HERO */
+.insights-hero{
+  position:relative;overflow:hidden;color:#fff;
+  padding:clamp(8.5rem,16vh,10rem) 0 clamp(4.8rem,8vw,7rem);
+  background:
+    radial-gradient(circle at 84% 18%,rgba(201,168,76,.22),transparent 23%),
+    linear-gradient(142deg,var(--navy-1000) 0%,var(--navy-900) 58%,#213c61 100%);
+}
+.insights-hero::before{
+  content:"";position:absolute;inset:0;
+  background:
+    linear-gradient(rgba(255,255,255,.028) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.028) 1px,transparent 1px);
+  background-size:48px 48px;
+  mask-image:linear-gradient(to bottom,#000,transparent 94%)
+}
+.insights-hero::after{
+  content:"F&D";
+  position:absolute;right:-28px;bottom:-58px;
+  font-size:clamp(10rem,22vw,20rem);line-height:.8;font-weight:900;
+  color:rgba(255,255,255,.032);letter-spacing:-.09em
+}
+.hero-inner{position:relative;z-index:2;max-width:900px}
+.insights-hero h1{
+  font-size:clamp(3rem,7vw,5.7rem);line-height:.98;
+  letter-spacing:-.055em;margin-bottom:1.2rem
+}
+.insights-hero h1 span{color:var(--gold-2)}
+.insights-hero .lead{
+  max-width:760px;color:#d2dae7;font-size:clamp(1.06rem,1.65vw,1.25rem);line-height:1.7
+}
+.hero-signature{
+  display:flex;flex-wrap:wrap;gap:.65rem;margin-top:2rem
+}
+.hero-signature span{
+  padding:.45rem .72rem;border-radius:999px;border:1px solid rgba(255,255,255,.13);
+  color:#c8d2df;background:rgba(255,255,255,.045);font-size:.75rem;font-weight:700
+}
+
+/* INTRO */
+.intro-grid{
+  display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(2rem,5vw,5rem);align-items:start
+}
+.intro-copy h2{
+  color:var(--navy-900);font-size:clamp(2rem,4vw,3.25rem);line-height:1.1;
+  letter-spacing:-.04em;margin-bottom:1.2rem
+}
+.intro-copy p{color:var(--slate);font-size:1.02rem;margin-bottom:1rem}
+.intro-quote{
+  margin-top:1.7rem;padding:1.3rem 1.4rem;
+  border-left:4px solid var(--gold);background:var(--cream);
+  border-radius:0 14px 14px 0;color:var(--navy-900);font-weight:750;font-size:1.08rem
+}
+.principles{display:grid;gap:.9rem}
+.principle{
+  padding:1.2rem;border:1px solid var(--line);border-radius:18px;background:#fff;
+  box-shadow:var(--shadow-soft);display:grid;grid-template-columns:44px 1fr;gap:.9rem
+}
+.principle-num{
+  width:44px;height:44px;border-radius:13px;background:var(--navy-900);
+  color:var(--gold-2);display:grid;place-items:center;font-size:.76rem;font-weight:850
+}
+.principle h3{color:var(--navy-900);font-size:1rem;margin-bottom:.25rem}
+.principle p{color:var(--slate);font-size:.84rem;line-height:1.5}
+
+/* ARTIGOS */
+.archive-head{
+  display:flex;justify-content:space-between;align-items:end;gap:2rem;margin-bottom:2rem
+}
+.archive-head h2{
+  color:var(--navy-900);font-size:clamp(2rem,4vw,3rem);line-height:1.1;letter-spacing:-.035em
+}
+.archive-head p{max-width:520px;color:var(--slate);font-size:.94rem;text-align:right}
+
+.article-card{
+  position:relative;overflow:hidden;
+  display:grid;grid-template-columns:minmax(280px,.72fr) minmax(0,1.28fr);
+  border:1px solid var(--line);border-radius:28px;background:#fff;box-shadow:var(--shadow)
+}
+.article-cover{
+  position:relative;min-height:520px;padding:2rem;
+  display:flex;flex-direction:column;justify-content:space-between;
+  color:#fff;background:
+    radial-gradient(circle at 84% 18%,rgba(229,202,119,.16),transparent 24%),
+    linear-gradient(150deg,#07182d,#0b2240);
+  overflow:hidden
+}
+.article-cover::before{
+  content:"";position:absolute;left:0;top:0;bottom:0;width:8px;background:#f2b91e
+}
+.article-cover::after{
+  content:"01";position:absolute;right:-12px;bottom:-25px;color:rgba(255,255,255,.045);
+  font-size:10rem;font-weight:900;line-height:1;letter-spacing:-.08em
+}
+.cover-logo{width:210px;position:relative;z-index:1}
+.cover-meta{
+  position:relative;z-index:1;color:var(--gold-2);font-size:.72rem;font-weight:800;
+  letter-spacing:.12em;text-transform:uppercase
+}
+.cover-title{position:relative;z-index:1}
+.cover-title h3{font-size:clamp(1.6rem,2.8vw,2.55rem);line-height:1.12;letter-spacing:-.035em;margin-bottom:.9rem}
+.cover-title p{color:var(--gold-2);font-size:.88rem;line-height:1.45;max-width:34ch}
+.cover-bottom{position:relative;z-index:1;color:#b8c5d6;font-size:.71rem}
+
+.article-content{padding:clamp(2rem,4.5vw,4rem);display:flex;flex-direction:column}
+.article-topline{display:flex;flex-wrap:wrap;gap:.55rem;margin-bottom:1.2rem}
+.tag{
+  padding:.38rem .62rem;border-radius:999px;background:#f4efe1;color:#80641e;
+  font-size:.68rem;font-weight:850;letter-spacing:.085em;text-transform:uppercase
+}
+.tag.dark{background:var(--navy-900);color:var(--gold-2)}
+.article-content h3{
+  color:var(--navy-900);font-size:clamp(1.9rem,3.7vw,3rem);line-height:1.08;
+  letter-spacing:-.04em;margin-bottom:.95rem
+}
+.article-subtitle{color:#927328;font-weight:750;font-size:1.03rem;margin-bottom:1.2rem}
+.article-summary{color:var(--slate);font-size:.98rem;line-height:1.72}
+.article-thesis{
+  margin:1.45rem 0;padding:1.05rem 1.1rem;border-radius:15px;
+  border:1px solid rgba(201,168,76,.28);background:var(--cream)
+}
+.article-thesis small{
+  display:block;color:#927328;font-size:.68rem;font-weight:850;letter-spacing:.1em;
+  text-transform:uppercase;margin-bottom:.3rem
+}
+.article-thesis strong{color:var(--navy-900);font-size:.94rem;line-height:1.55}
+.article-points{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.55rem}
+.article-points span{
+  padding:.4rem .62rem;border-radius:999px;border:1px solid var(--line);
+  color:var(--muted);font-size:.72rem;font-weight:650
+}
+.article-actions{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:auto;padding-top:.6rem}
+.article-note{margin-top:1rem;color:var(--muted);font-size:.74rem;line-height:1.5}
+
+/* FUTURE */
+.future-band{
+  display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:center;
+  padding:1.8rem 2rem;border-radius:22px;background:var(--navy-900);color:#fff
+}
+.future-band h3{font-size:1.28rem;margin-bottom:.35rem}
+.future-band p{color:#c3cedd;font-size:.88rem;max-width:720px}
+.future-mark{
+  width:58px;height:58px;border-radius:50%;display:grid;place-items:center;
+  border:1px solid rgba(229,202,119,.45);color:var(--gold-2);font-size:1.35rem;font-weight:800
+}
+
+/* FOOTER */
+.footer{background:var(--navy-1000);color:#fff;padding:2.6rem 0 1.5rem}
+.footer-main{display:grid;grid-template-columns:1.15fr .85fr;gap:2.5rem;align-items:start}
+.footer-brand img{width:min(100%,220px);height:auto;margin-bottom:1.15rem}
+.footer-brand p{color:#9faabd;font-size:.82rem;max-width:48ch}
+.footer-links{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+.footer-links h4{color:var(--gold-2);font-size:.76rem;text-transform:uppercase;letter-spacing:.12em;margin-bottom:.65rem}
+.footer-links a{display:block;color:#b8c3d3;font-size:.82rem;padding:.25rem 0}
+.footer-links a:hover{color:#fff}
+.footer-bottom{
+  display:flex;justify-content:space-between;gap:1rem;margin-top:2rem;padding-top:1.2rem;
+  border-top:1px solid rgba(255,255,255,.1);color:#7f8b9e;font-size:.74rem
+}
+.whatsapp-float{
+  position:fixed;right:20px;bottom:20px;z-index:80;width:58px;height:58px;border-radius:50%;
+  display:grid;place-items:center;background:#25d366;color:#fff;font-weight:900;
+  box-shadow:0 16px 35px -12px rgba(0,0,0,.45);transition:.2s ease;font-size:1.1rem
+}
+.whatsapp-float:hover{transform:translateY(-3px) scale(1.03)}
+
+@media(max-width:1040px){
+  .nav-links{gap:.8rem}
+  .nav-links>a:not(.btn){font-size:.8rem}
+  .article-card{grid-template-columns:.78fr 1.22fr}
+}
+@media(max-width:900px){
+  .nav-toggle{display:flex}
+  .nav-links{
+    position:fixed;top:0;right:0;width:min(82vw,360px);height:100vh;
+    flex-direction:column;align-items:flex-start;justify-content:center;gap:1.2rem;
+    padding:2.2rem;background:var(--navy-1000);box-shadow:-20px 0 50px rgba(0,0,0,.4);
+    transform:translateX(105%);transition:.3s ease
+  }
+  .nav.open .nav-links{transform:none}
+  .intro-grid,.article-card{grid-template-columns:1fr}
+  .article-cover{min-height:430px}
+  .archive-head{align-items:flex-start;flex-direction:column;gap:.5rem}
+  .archive-head p{text-align:left}
+  .footer-main{grid-template-columns:1fr}
+}
+@media(max-width:620px){
+  .container{width:min(var(--container),calc(100% - 28px))}
+  .nav-logo img{height:42px;max-width:205px}
+  .insights-hero{padding-top:7.6rem}
+  .article-cover{min-height:390px;padding:1.5rem}
+  .cover-logo{width:180px}
+  .article-content{padding:1.5rem}
+  .article-actions{flex-direction:column}
+  .btn{width:100%}
+  .future-band{grid-template-columns:1fr}
+  .footer-links{grid-template-columns:1fr}
+  .footer-bottom{flex-direction:column}
+  .whatsapp-float{width:54px;height:54px;right:14px;bottom:14px}
+}
+</style>
+</head>
+
+<body>
+
+<header class="nav" id="nav">
+  <div class="container nav-inner">
+    <a class="nav-logo" aria-label="F&D - início" href="/">
+      <img src="/images/img6.png" alt="F&D Consultancy">
+    </a>
+
+    <nav class="nav-links" id="navLinks" aria-label="Navegação principal">
+      <a href="/#sobre">Sobre</a>
+      <a href="/#solucoes">Soluções</a>
+      <a href="/conteudo.html">Conteúdo</a>
+      <a class="active" href="/insights.html">Insights</a>
+      <a href="/#projetos">Projetos</a>
+      <a href="/#metodo">Como atuamos</a>
+      <a href="/#lideranca">Experiência</a>
+      <a class="btn btn-gold" href="/#contato">Fale conosco</a>
+    </nav>
+
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-label="Abrir menu">
+      <span aria-hidden="true"></span>
+    </button>
+  </div>
+</header>
+
+<main>
+  <section class="insights-hero">
+    <div class="container">
+      <div class="hero-inner">
+        <p class="eyebrow light">Conteúdo autoral F&D</p>
+        <h1>F&D <span>Insights</span></h1>
+        <p class="lead">
+          Um espaço dedicado à produção intelectual da F&D Consultancy: artigos autorais que interpretam
+          movimentos de mercado, conectam fatos a seus impactos financeiros e estratégicos e transformam
+          experiência prática em conhecimento para decisões empresariais melhores.
+        </p>
+        <div class="hero-signature">
+          <span>Análise independente</span>
+          <span>Perspectiva financeira</span>
+          <span>Impacto nos negócios</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container intro-grid">
+      <div class="intro-copy">
+        <p class="eyebrow">O que é o F&D Insights</p>
+        <h2>Conhecimento próprio para interpretar o que está por trás dos movimentos de mercado.</h2>
+        <p>
+          O F&D Insights reúne análises elaboradas pela própria F&D Consultancy sobre temas conectados à
+          nossa atuação: Corporate Finance, M&A, valuation, reestruturação empresarial, FP&A, governança,
+          estratégia, performance, mercado de capitais e desenvolvimento de negócios.
+        </p>
+        <p>
+          Cada publicação parte de fatos, dados e fontes públicas identificadas, mas a tese, a organização
+          analítica, as interpretações e a redação são de elaboração própria da F&D.
+        </p>
+        <div class="intro-quote">
+          Mais do que reproduzir a notícia, o objetivo é interpretar movimentos, conectar acontecimentos e
+          identificar suas implicações financeiras, estratégicas e empresariais.
+        </div>
+      </div>
+
+      <div class="principles" aria-label="Princípios editoriais do F&D Insights">
+        <article class="principle">
+          <div class="principle-num">01</div>
+          <div><h3>Conteúdo autoral</h3><p>Teses, interpretações e análises produzidas pela F&D a partir de sua visão financeira e empresarial.</p></div>
+        </article>
+        <article class="principle">
+          <div class="principle-num">02</div>
+          <div><h3>Rigor factual</h3><p>Dados e acontecimentos utilizados como suporte são contextualizados e, sempre que aplicável, referenciados em fontes públicas e institucionais.</p></div>
+        </article>
+        <article class="principle">
+          <div class="principle-num">03</div>
+          <div><h3>Aplicação executiva</h3><p>O foco é entender o que cada movimento pode significar para capital, estratégia, governança, risco, performance e geração de valor.</p></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-soft" id="artigos">
+    <div class="container">
+      <div class="archive-head">
+        <div>
+          <p class="eyebrow">Publicações autorais</p>
+          <h2>Artigos F&D Insights</h2>
+        </div>
+        <p>
+          Esta área será atualizada com novas edições. Cada artigo apresenta uma síntese executiva e acesso
+          ao PDF completo da publicação.
+        </p>
+      </div>
+
+      <!-- ARTIGO 01 — duplicar este bloco para as próximas edições -->
+      <article class="article-card">
+        <div class="article-cover" aria-label="Capa editorial do F&D Insights número 01">
+          <div>
+            <img class="cover-logo" src="/images/img26.png" alt="F&D Financial and Business Development Consultancy">
+          </div>
+          <div class="cover-title">
+            <div class="cover-meta">F&D Insights | Nº 01 | Agosto 2026</div>
+            <h3>Bancos além dos bancos</h3>
+            <p>Por que o capital financeiro está avançando sobre arenas, shoppings e experiências.</p>
+          </div>
+          <div class="cover-bottom">Conteúdo autoral F&D · Análise econômica, financeira e regulatória</div>
+        </div>
+
+        <div class="article-content">
+          <div class="article-topline">
+            <span class="tag dark">Conteúdo autoral</span>
+            <span class="tag">Nº 01</span>
+            <span class="tag">Agosto 2026</span>
+          </div>
+
+          <h3>Bancos além dos bancos: por que o capital financeiro está avançando sobre arenas, shoppings e experiências</h3>
+
+          <p class="article-subtitle">
+            Da intermediação financeira à disputa pela atenção, pelo relacionamento e pelos ativos reais.
+          </p>
+
+          <p class="article-summary">
+            O primeiro F&D Insights analisa por que bancos, fintechs, gestoras e conglomerados financeiros
+            passaram a disputar algo que vai além do dinheiro do cliente: atenção, recorrência, dados,
+            experiência e presença na vida cotidiana do consumidor. A publicação conecta movimentos como
+            os naming rights do Nubank Parque, o precedente do Bradesco nos Jogos Rio 2016 e a aproximação
+            entre capital financeiro e shopping centers para discutir estratégia, distribuição, diversificação,
+            risco, capital e regulação.
+          </p>
+
+          <div class="article-thesis">
+            <small>Tese central</small>
+            <strong>
+              Instituições financeiras passaram a disputar algo que vai muito além do dinheiro do cliente:
+              atenção, recorrência, dados, experiência e presença na vida cotidiana do consumidor.
+            </strong>
+          </div>
+
+          <div class="article-points" aria-label="Temas abordados">
+            <span>Estratégia financeira</span>
+            <span>Branding & experiência</span>
+            <span>Ativos reais</span>
+            <span>Shopping centers</span>
+            <span>Capital & liquidez</span>
+            <span>Regulação</span>
+          </div>
+
+          <div class="article-actions">
+            <a class="btn btn-navy" href="FD_Insights_01_Bancos_Alem_dos_Bancos.pdf" target="_blank" rel="noopener">
+              Ler artigo completo em PDF
+            </a>
+            <a class="btn btn-outline-dark" href="FD_Insights_01_Bancos_Alem_dos_Bancos.pdf" download>
+              Baixar PDF
+            </a>
+          </div>
+
+          <p class="article-note">
+            Publicação de finalidade informativa e analítica. Não constitui recomendação de investimento,
+            oferta de valores mobiliários, parecer jurídico ou aconselhamento específico para qualquer operação.
+          </p>
+        </div>
+      </article>
+
+      <div style="height:1.2rem"></div>
+
+      <div class="future-band">
+        <div>
+          <h3>Uma biblioteca autoral em construção.</h3>
+          <p>
+            Novas edições serão incorporadas a esta página mantendo o mesmo padrão editorial, com resumo
+            executivo, temas abordados e acesso direto à publicação completa.
+          </p>
+        </div>
+        <div class="future-mark" aria-hidden="true">+</div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-main">
+      <div class="footer-brand">
+        <img src="/images/img26.png" alt="F&D Financial and Business Development Consultancy">
+        <p>
+          Financial and Business Development Consultancy. Gestão financeira, governança, transações e
+          desenvolvimento de negócios para decisões de alto impacto.
+        </p>
+      </div>
+
+      <div class="footer-links">
+        <div>
+          <h4>Navegação</h4>
+          <a href="/">Início</a>
+          <a href="/#sobre">Sobre</a>
+          <a href="/#solucoes">Soluções</a>
+          <a href="/conteudo.html">Newsletter</a>
+          <a href="/insights.html">F&D Insights</a>
+          <a href="/#projetos">Projetos ativos</a>
+        </div>
+        <div>
+          <h4>Contato</h4>
+          <a href="mailto:contato@fedconsultancy.com.br">contato@fedconsultancy.com.br</a>
+          <a href="https://wa.me/5521980111474" target="_blank" rel="noopener">+55 (21) 98011-1474</a>
+          <a href="https://www.linkedin.com/company/fedconsultancy" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© <span id="year">2026</span> F&D Financial and Business Development Consultancy. Todos os direitos reservados.</span>
+      <span>Rio de Janeiro - RJ</span>
+    </div>
+  </div>
+</footer>
+
+<a class="whatsapp-float"
+   href="https://wa.me/5521980111474?text=Ol%C3%A1%2C%20gostaria%20de%20conhecer%20a%20F%26D."
+   target="_blank" rel="noopener" aria-label="Falar com a F&D pelo WhatsApp">W</a>
+
+<script>
+(function(){
+  var nav=document.getElementById('nav');
+  var toggle=document.getElementById('navToggle');
+  var links=document.getElementById('navLinks');
+
+  toggle.addEventListener('click',function(){
+    var open=nav.classList.toggle('open');
+    document.body.classList.toggle('menu-open',open);
+    toggle.setAttribute('aria-expanded',open?'true':'false');
+    toggle.setAttribute('aria-label',open?'Fechar menu':'Abrir menu');
+  });
+
+  links.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click',function(){
+      nav.classList.remove('open');
+      document.body.classList.remove('menu-open');
+      toggle.setAttribute('aria-expanded','false');
+    });
+  });
+
+  document.getElementById('year').textContent=new Date().getFullYear();
+})();
+</script>
+
+</body>
+</html>
