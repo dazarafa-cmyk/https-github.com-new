@@ -520,7 +520,7 @@
   pointer-events:none;
 }
 .active-projects::after{
-  content:"CELEBRATE";
+  content:none;
   position:absolute;
   right:-1.5rem;
   bottom:-2.8rem;
@@ -1492,6 +1492,19 @@
 @media (max-width:900px){.projects-top-grid{grid-template-columns:1fr}.venture-card{max-width:760px}}
 @media (max-width:620px){.projects-top-grid{gap:1.25rem}.venture-card{padding:1.2rem}.venture-card .btn{width:100%}}
 </style>
+<style>
+.services-grid {align-items:start}
+.services-grid details.service-card {padding:0}
+.services-grid details:hover {transform:none}
+.services-grid summary.service-head {margin:0;align-items:center;padding:1rem 1.25rem;cursor:pointer;list-style:none}
+.services-grid summary::-webkit-details-marker {display:none}
+.services-grid summary h3 {flex:1;min-width:0}
+.services-grid summary::after {content:"";width:.6rem;height:.6rem;flex:none;border:solid var(--gold-2);border-width:0 2px 2px 0;transform:rotate(45deg)}
+.services-grid details[open] summary::after {transform:rotate(225deg)}
+.services-grid summary:focus-visible {outline:2px solid var(--gold-2);outline-offset:-4px;border-radius:var(--radius)}
+.service-description {padding:0 1.25rem 1.25rem}
+@media(max-width:600px){.services-grid summary.service-head{padding:.85rem 1rem;gap:.75rem}.services-grid summary .service-icon{width:38px;height:38px}}
+</style>
 </head>
 <body>
 <svg aria-hidden="true" style="display:none">
@@ -1648,8 +1661,7 @@
 </article>
 </div>
 <div class="services-grid">
-<article class="service-card reveal visible">
-<div class="service-head"><div class="service-icon"><svg><use href="#i-brief"></use></svg></div><h3>Corporate Finance, M&amp;A e Transações</h3></div>
+<details class="service-card" name="solucoes-integradas"><summary class="service-head"><span class="service-icon" aria-hidden="true"><svg><use href="#i-brief"></use></svg></span><h3>Corporate Finance, M&amp;A e Transações</h3></summary><div class="service-description">
 <p class="intro">Estruturação financeira e apoio executivo em operações de crescimento, captação, compra, venda ou reorganização de empresas.</p>
 <ul>
 <li><svg><use href="#i-check"></use></svg>Valuation e avaliações econômico-financeiras</li>
@@ -1658,9 +1670,8 @@
 <li><svg><use href="#i-check"></use></svg>Due diligence e organização de informações para investidores</li>
 <li><svg><use href="#i-check"></use></svg>CFO as a Service e suporte a IPO/CVM ou instituições reguladas pelo BACEN</li>
 </ul><span class="service-tag">Decisões de capital e valor</span>
-</article>
-<article class="service-card reveal visible">
-<div class="service-head"><div class="service-icon"><svg><use href="#i-chart"></use></svg></div><h3>Gestão Financeira, Controladoria e Performance</h3></div>
+</div></details>
+<details class="service-card" name="solucoes-integradas"><summary class="service-head"><span class="service-icon" aria-hidden="true"><svg><use href="#i-chart"></use></svg></span><h3>Gestão Financeira, Controladoria e Performance</h3></summary><div class="service-description">
 <p class="intro">Organização da função financeira para elevar previsibilidade, disciplina de gestão e qualidade das decisões.</p>
 <ul>
 <li><svg><use href="#i-check"></use></svg>Gestão financeira terceirizada (BPO) e controladoria</li>
@@ -1669,9 +1680,8 @@
 <li><svg><use href="#i-check"></use></svg>Análise de custos, rentabilidade, caixa e capital de giro</li>
 <li><svg><use href="#i-check"></use></svg>Reestruturação organizacional e melhoria de resultados</li>
 </ul><span class="service-tag">Controle, previsibilidade e performance</span>
-</article>
-<article class="service-card reveal visible">
-<div class="service-head"><div class="service-icon"><svg><use href="#i-shield"></use></svg></div><h3>Auditoria, Governança, Riscos e Compliance</h3></div>
+</div></details>
+<details class="service-card" name="solucoes-integradas"><summary class="service-head"><span class="service-icon" aria-hidden="true"><svg><use href="#i-shield"></use></svg></span><h3>Auditoria, Governança, Riscos e Compliance</h3></summary><div class="service-description">
 <p class="intro">Soluções para fortalecer confiabilidade, transparência, controles e preparação para ambientes regulados ou transações.</p>
 <ul>
 <li><svg><use href="#i-check"></use></svg>Auditoria independente e interna, conforme o escopo</li>
@@ -1680,9 +1690,8 @@
 <li><svg><use href="#i-check"></use></svg>Compliance corporativo e desenho de governança</li>
 <li><svg><use href="#i-check"></use></svg>Preparação de informações e processos para auditoria ou investidores</li>
 </ul><span class="service-tag">Confiança e segurança decisória</span>
-</article>
-<article class="service-card reveal visible">
-<div class="service-head"><div class="service-icon"><svg><use href="#i-compass"></use></svg></div><h3>Estratégia, Gestão e Eficiência Empresarial</h3></div>
+</div></details>
+<details class="service-card" name="solucoes-integradas"><summary class="service-head"><span class="service-icon" aria-hidden="true"><svg><use href="#i-compass"></use></svg></span><h3>Estratégia, Gestão e Eficiência Empresarial</h3></summary><div class="service-description">
 <p class="intro">Planejamento e execução para alinhar objetivos, processos, estrutura e recursos à estratégia de longo prazo.</p>
 <ul>
 <li><svg><use href="#i-check"></use></svg>Consultoria de gestão e performance</li>
@@ -1691,9 +1700,8 @@
 <li><svg><use href="#i-check"></use></svg>Compliance trabalhista, previdenciário, folha e benefícios</li>
 <li><svg><use href="#i-check"></use></svg>Estratégias ESG e desenvolvimento sustentável</li>
 </ul><span class="service-tag">Estrutura para crescer melhor</span>
-</article>
-<article class="service-card reveal visible">
-<div class="service-head"><div class="service-icon"><svg><use href="#i-globe"></use></svg></div><h3>Desenvolvimento de Negócios e Expansão Internacional</h3></div>
+</div></details>
+<details class="service-card" name="solucoes-integradas"><summary class="service-head"><span class="service-icon" aria-hidden="true"><svg><use href="#i-globe"></use></svg></span><h3>Desenvolvimento de Negócios e Expansão Internacional</h3></summary><div class="service-description">
 <p class="intro">Conexão entre empresas, mercados, parceiros e capital para criar oportunidades de crescimento no Brasil e no exterior.</p>
 <ul>
 <li><svg><use href="#i-check"></use></svg>Internacionalização de empresas e estratégias de entrada</li>
@@ -1702,9 +1710,8 @@
 <li><svg><use href="#i-check"></use></svg>Diplomacia corporativa e negociações multilaterais</li>
 <li><svg><use href="#i-check"></use></svg>Planos de negócio para startups, fintechs e empresas em expansão</li>
 </ul><span class="service-tag">Conexões que abrem mercados</span>
-</article>
-<article class="service-card reveal visible">
-<div class="service-head"><div class="service-icon"><svg><use href="#i-digital"></use></svg></div><h3>Tecnologia, Processos e Inteligência de Gestão</h3></div>
+</div></details>
+<details class="service-card" name="solucoes-integradas"><summary class="service-head"><span class="service-icon" aria-hidden="true"><svg><use href="#i-digital"></use></svg></span><h3>Tecnologia, Processos e Inteligência de Gestão</h3></summary><div class="service-description">
 <p class="intro">Transformação de rotinas e informações em uma arquitetura de gestão mais eficiente, integrada e orientada por dados.</p>
 <ul>
 <li><svg><use href="#i-check"></use></svg>Mapeamento e redesenho de processos</li>
@@ -1713,7 +1720,7 @@
 <li><svg><use href="#i-check"></use></svg>Modelos de acompanhamento executivo e governança de dados</li>
 <li><svg><use href="#i-check"></use></svg>Automação de controles e melhoria da qualidade da informação</li>
 </ul><span class="service-tag">Dados para agir com velocidade</span>
-</article>
+</div></details>
 </div>
 </div>
 </section>
@@ -1783,35 +1790,7 @@ Acessar a Newsletter F&amp;D <span aria-hidden="true">→</span>
 <a class="btn btn-gold" href="https://fed-consultancy.web.app/Projetos/projetos.html" aria-label="Conhecer os novos projetos em estruturação">Conhecer os novos projetos <span aria-hidden="true">→</span></a>
 </aside>
 </div>
-<article aria-labelledby="celebrate-title" class="project-showcase reveal visible">
-<div class="project-copy">
-<div class="project-status-row"><span class="project-status"><i aria-hidden="true"></i>Projeto ativo</span><span class="project-code">Oportunidade de investimento</span></div>
-<h3 id="celebrate-title">Projeto Celebrate</h3>
-<p class="project-subtitle">Plataforma premium de hospitalidade, experiências e ativos imobiliários.</p>
-<p class="project-description">A F&amp;D conduz a preparação e a apresentação estratégica de uma oportunidade empresarial consolidada, com operação relevante, potencial de expansão e ativos que ampliam as alternativas de criação de valor.</p>
-<div aria-label="Características do projeto" class="project-tags"><span>Hospitality &amp; Experience</span><span>Real Estate</span><span>M&amp;A</span><span>Investor Relations</span></div>
-<div class="project-confidentiality">
-<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><rect height="10" rx="2" width="14" x="5" y="10"></rect><path d="M8 10V7a4 4 0 0 1 8 0v3"></path><path d="M12 14v2"></path></svg>
-<div><strong>Apresentação pública preservando a identidade do ativo</strong><p>O primeiro acesso será uma página teaser. Informações detalhadas e documentos confidenciais serão disponibilizados somente após manifestação de interesse e formalização de NDA.</p></div>
-</div>
-<div class="project-actions">
-<a aria-label="Conhecer o Projeto Celebrate" class="btn btn-navy" href="https://fed-consultancy.web.app/projeto-celebrate.html"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.9" viewBox="0 0 24 24"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg>Conhecer o Projeto Celebrate</a>
-<small>O acesso inicial não identifica publicamente a empresa ou o ativo relacionado ao projeto.</small>
-</div>
-</div>
-<div aria-label="Etapas de acesso ao Projeto Celebrate" class="project-stage">
-<div class="stage-top"><span>F&amp;D Active Mandate</span><span>Private Opportunity</span></div>
-<div class="stage-brand"><small>Projeto</small><strong>CELEBRATE</strong><p>Uma apresentação progressiva, desenhada para combinar visibilidade da oportunidade, qualificação de interessados e proteção das informações estratégicas.</p></div>
-<div>
-<div class="project-flow">
-<div class="project-flow-item"><b>01</b><div><strong>Teaser público</strong><span>Visão inicial da oportunidade</span></div></div>
-<div class="project-flow-item"><b>02</b><div><strong>Interesse e NDA</strong><span>Identificação e confidencialidade</span></div></div>
-<div class="project-flow-item"><b>03</b><div><strong>Investor Data Room</strong><span>Informações completas e controladas</span></div></div>
-</div>
-<div class="stage-foot"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><path d="M12 3 4.5 6v5.5c0 4.6 3.2 8.1 7.5 9.5 4.3-1.4 7.5-4.9 7.5-9.5V6L12 3Z"></path><path d="m9 12 2 2 4-4"></path></svg>Estrutura preparada para ampliar o nível de informação de acordo com cada etapa do processo.</div>
-</div>
-</div>
-</article>
+
 </div>
 </section>
 <section class="section section-soft method-compact-v2" id="metodo">
@@ -1849,11 +1828,11 @@ Acessar a Newsletter F&amp;D <span aria-hidden="true">→</span>
 <div class="kp-partner-label">Parceria comercial</div>
 <p class="kp-identity-note">Uma atuação complementar que reúne inteligência financeira, relacionamento próximo e soluções especializadas de proteção para diferentes momentos da vida e do negócio.</p>
 </div>
-</div></div><div class="kp-partnership reveal visible kp-partnership-compact">
+</div></div><details class="kp-partnership kp-partnership-compact"><summary class="kp-toggle">KP Seguros &amp; Planejamento</summary>
 <div class="kp-partnership-top kp-copy-row">
 
 <div class="kp-copy">
-<p class="eyebrow">KP Seguros &amp; Planejamento</p>
+
 <h3>Estratégias de proteção para preservar pessoas, patrimônio e empresas.</h3>
 <p>A KP combina tecnologia e planejamento especializado para estruturar soluções de seguros, previdência, investimentos e benefícios. A F&amp;D identifica necessidades, organiza o contexto financeiro e aproxima o cliente da solução mais adequada ao seu perfil e aos seus objetivos.</p>
 <div class="kp-value-grid">
@@ -1895,7 +1874,7 @@ Acessar a Newsletter F&amp;D <span aria-hidden="true">→</span>
 <div class="kp-process-badge">Como funciona</div>
 <p><strong>A F&amp;D atua na prospecção, no relacionamento e na conexão comercial.</strong> A avaliação técnica, as cotações, a contratação e a gestão dos produtos securitários são conduzidas pela KP Personal Consultoria, Planejamento e Corretora de Seguros de Vida, registrada na SUSEP sob o nº 20.2018953.2.</p>
 </div>
-</div>
+</details>
 </div>
 </section>
 <section class="section section-soft experience-leadership" id="lideranca">
