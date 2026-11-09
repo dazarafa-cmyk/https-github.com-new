@@ -1,0 +1,621 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Jorge Felippe Neto — trajetória, atuação pública, projetos, notícias, vídeos e canais oficiais.">
+  <meta name="theme-color" content="#0870B8">
+  <title>Jorge Felippe Neto | Trajetória e atuação pública</title>
+  <style>
+    :root{
+      --blue-950:#061a2d;
+      --blue-900:#082c4b;
+      --blue-800:#064f83;
+      --blue-700:#0870b8;
+      --blue-600:#0791d5;
+      --blue-500:#02b6ee;
+      --sky:#eaf7ff;
+      --ice:#f4f9fc;
+      --white:#ffffff;
+      --ink:#10202d;
+      --muted:#61717e;
+      --line:#d9e5ec;
+      --shadow:0 24px 60px rgba(4,39,65,.13);
+      --shadow-soft:0 12px 32px rgba(4,39,65,.09);
+      --radius:26px;
+      --max:1180px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:var(--white);line-height:1.55;-webkit-font-smoothing:antialiased}
+    img{max-width:100%;display:block}
+    a{color:inherit;text-decoration:none}
+    button{font:inherit}
+    .container{width:min(var(--max),calc(100% - 40px));margin:0 auto}
+    .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;font-weight:800;color:var(--blue-700);margin-bottom:14px}
+    .eyebrow::before{content:"";width:26px;height:2px;background:linear-gradient(90deg,var(--blue-500),var(--blue-700));border-radius:99px}
+    h1,h2,h3,h4{margin:0;line-height:1.08;letter-spacing:-.025em}
+    h2{font-size:clamp(2.05rem,4.2vw,4rem)}
+    p{margin:0;color:var(--muted)}
+    .section{padding:96px 0}
+    .section-head{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(280px,.75fr);gap:54px;align-items:end;margin-bottom:46px}
+    .section-head p{font-size:1.03rem}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:50px;padding:0 20px;border-radius:999px;font-weight:800;transition:.25s ease;border:1px solid transparent;cursor:pointer}
+    .btn svg{width:18px;height:18px}
+    .btn-primary{background:linear-gradient(135deg,var(--blue-600),var(--blue-700));color:#fff;box-shadow:0 13px 30px rgba(8,112,184,.24)}
+    .btn-primary:hover{transform:translateY(-2px);box-shadow:0 18px 38px rgba(8,112,184,.32)}
+    .btn-light{background:rgba(255,255,255,.12);color:#fff;border-color:rgba(255,255,255,.35);backdrop-filter:blur(10px)}
+    .btn-light:hover{background:#fff;color:var(--blue-900)}
+    .btn-outline{border-color:var(--line);background:#fff;color:var(--blue-800)}
+    .btn-outline:hover{border-color:var(--blue-600);transform:translateY(-2px)}
+
+    /* Header */
+    .topbar{background:var(--blue-950);color:#cde9f8;font-size:.78rem}
+    .topbar .container{display:flex;align-items:center;justify-content:space-between;min-height:34px;gap:18px}
+    .topbar-note{opacity:.88}
+    .top-social{display:flex;gap:8px;align-items:center}
+    .social-icon{width:31px;height:31px;border-radius:8px;display:grid;place-items:center;border:1px solid rgba(255,255,255,.22);background:rgba(255,255,255,.07);color:#d9effa;transition:.2s ease}
+    .social-icon svg{width:16px;height:16px}
+    .social-icon:hover{background:#fff;color:var(--blue-900);transform:translateY(-1px)}
+    .header{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.92);border-bottom:1px solid rgba(217,229,236,.75);backdrop-filter:blur(18px)}
+    .nav{height:78px;display:flex;align-items:center;justify-content:space-between;gap:30px}
+    .brand{width:215px;flex:0 0 auto}
+    .brand img{width:100%;height:auto}
+    .menu{display:flex;align-items:center;gap:25px;font-weight:700;font-size:.91rem;color:#314552}
+    .menu a{position:relative}
+    .menu a:not(.nav-cta)::after{content:"";position:absolute;height:2px;left:0;right:100%;bottom:-9px;background:var(--blue-600);transition:.22s ease}
+    .menu a:hover::after{right:0}
+    .nav-cta{color:#fff!important;background:var(--blue-700);padding:11px 16px;border-radius:999px}
+    .mobile-toggle{display:none;border:0;background:transparent;padding:8px;color:var(--blue-900)}
+
+    /* Hero */
+    .hero{min-height:760px;position:relative;overflow:hidden;background:var(--blue-950);color:#fff;display:flex;align-items:stretch}
+    .hero-media{position:absolute;inset:0}
+    .hero-media img{width:100%;height:100%;object-fit:cover;object-position:center 35%}
+    .hero-overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(3,25,44,.94) 0%,rgba(3,25,44,.85) 36%,rgba(3,25,44,.38) 66%,rgba(3,25,44,.10) 100%)}
+    .hero::after{content:"";position:absolute;inset:auto -10% -160px auto;width:620px;height:620px;border-radius:50%;background:radial-gradient(circle,rgba(3,182,238,.28),rgba(3,182,238,0) 67%)}
+    .hero .container{position:relative;z-index:2;display:flex;align-items:center;padding-top:64px;padding-bottom:68px}
+    .hero-copy{max-width:650px}
+    .hero-kicker{display:inline-flex;align-items:center;gap:9px;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.24);padding:8px 13px;border-radius:999px;font-weight:800;font-size:.8rem;letter-spacing:.04em;margin-bottom:22px;backdrop-filter:blur(8px)}
+    .hero-kicker .dot{width:8px;height:8px;border-radius:50%;background:var(--blue-500);box-shadow:0 0 0 5px rgba(2,182,238,.15)}
+    .hero h1{font-size:clamp(3.4rem,7vw,6.8rem);max-width:650px}
+    .hero h1 span{display:block;color:#8fddff;font-size:.38em;margin-top:14px;letter-spacing:.015em;line-height:1.1}
+    .hero-sub{max-width:585px;color:#d6e7f1;font-size:clamp(1rem,1.5vw,1.16rem);margin:24px 0 32px}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:12px}
+    .hero-foot{display:flex;gap:26px;flex-wrap:wrap;margin-top:44px;padding-top:26px;border-top:1px solid rgba(255,255,255,.2);max-width:580px}
+    .hero-foot-item strong{display:block;color:#fff;font-size:1.04rem}
+    .hero-foot-item small{color:#b5cfdd}
+
+    /* Intro / bio */
+    .bio-wrap{display:grid;grid-template-columns:.93fr 1.07fr;gap:64px;align-items:center}
+    .bio-photo{position:relative;min-height:580px}
+    .bio-photo .main{position:absolute;inset:0 42px 0 0;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+    .bio-photo .main img{width:100%;height:100%;object-fit:cover;object-position:center}
+    .bio-badge{position:absolute;right:0;bottom:40px;width:210px;padding:22px;border-radius:22px;background:linear-gradient(150deg,var(--blue-800),var(--blue-600));color:#fff;box-shadow:var(--shadow)}
+    .bio-badge strong{display:block;font-size:2.4rem;line-height:1}
+    .bio-badge span{font-size:.84rem;color:#d7f2ff}
+    .bio-copy p{font-size:1.07rem;margin-top:20px}
+    .bio-quote{margin-top:28px;border-left:3px solid var(--blue-500);padding:8px 0 8px 20px;color:#2d495b;font-weight:650}
+    .bio-tags{display:flex;flex-wrap:wrap;gap:9px;margin-top:28px}
+    .tag{padding:8px 11px;border-radius:999px;background:var(--ice);border:1px solid var(--line);font-size:.8rem;font-weight:700;color:#365567}
+
+    /* Stats */
+    .stats{background:linear-gradient(135deg,#061c31,#073d66 62%,#0870b8);color:#fff;position:relative;overflow:hidden}
+    .stats::before{content:"";position:absolute;width:520px;height:520px;border:1px solid rgba(255,255,255,.12);border-radius:50%;right:-180px;top:-250px;box-shadow:0 0 0 74px rgba(255,255,255,.025),0 0 0 145px rgba(255,255,255,.018)}
+    .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;position:relative}
+    .stat-card{padding:28px 24px;border:1px solid rgba(255,255,255,.18);border-radius:22px;background:rgba(255,255,255,.07);backdrop-filter:blur(10px)}
+    .stat-num{font-size:clamp(2.25rem,4.4vw,4rem);font-weight:900;line-height:1;color:#fff;letter-spacing:-.04em}
+    .stat-label{color:#cbe7f5;font-weight:650;margin-top:10px;font-size:.91rem}
+    .stat-note{margin-top:22px;color:#a8cada;font-size:.78rem}
+
+    /* Timeline */
+    .timeline{background:var(--ice)}
+    .timeline-track{position:relative;display:grid;grid-template-columns:repeat(6,1fr);gap:18px;margin-top:24px}
+    .timeline-track::before{content:"";position:absolute;left:4%;right:4%;top:23px;height:2px;background:linear-gradient(90deg,var(--blue-500),var(--blue-700));z-index:0}
+    .timeline-item{position:relative;z-index:1}
+    .timeline-dot{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:#fff;border:2px solid var(--blue-600);box-shadow:0 4px 16px rgba(7,112,184,.18);font-weight:900;color:var(--blue-700);font-size:.75rem}
+    .timeline-card{margin-top:20px;background:#fff;padding:20px;border-radius:18px;border:1px solid var(--line);min-height:190px;box-shadow:var(--shadow-soft)}
+    .timeline-card h3{font-size:1.05rem;margin-bottom:10px;color:var(--blue-900)}
+    .timeline-card p{font-size:.88rem}
+
+    /* Areas */
+    .areas-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+    .area-card{position:relative;border:1px solid rgba(255,255,255,.10);border-radius:22px;padding:24px;min-height:235px;overflow:hidden;background:linear-gradient(145deg,var(--blue-900),var(--blue-700));color:#fff;transition:.25s ease;box-shadow:0 12px 28px rgba(4,56,92,.12)}
+    .area-card:hover{transform:translateY(-5px);box-shadow:0 20px 42px rgba(4,56,92,.20);border-color:rgba(255,255,255,.22)}
+    .area-card p{color:#d5eaf5;font-size:.9rem}
+    .area-icon{width:48px;height:48px;border-radius:15px;display:grid;place-items:center;background:rgba(255,255,255,.14);color:#fff;margin-bottom:30px}
+    .area-icon svg{width:24px;height:24px}
+    .area-card h3{font-size:1.22rem;margin-bottom:10px}
+    .area-rank{position:absolute;right:18px;top:15px;font-size:3rem;font-weight:900;color:rgba(255,255,255,.08);line-height:1}
+
+    /* Zone map */
+    .zone{background:linear-gradient(180deg,#eef8fd 0%,#fff 100%)}
+    .zone-layout{display:grid;grid-template-columns:1.25fr .75fr;gap:34px;align-items:stretch}
+    .map-card{position:relative;min-height:560px;border-radius:28px;background:linear-gradient(135deg,#d9f1fc,#eff9fd);border:1px solid #cfe6f1;overflow:hidden;box-shadow:var(--shadow-soft)}
+    .map-card::before{content:"";position:absolute;inset:18px;background-image:linear-gradient(rgba(8,112,184,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(8,112,184,.055) 1px,transparent 1px);background-size:34px 34px;border-radius:20px}
+    .map-shape{position:absolute;inset:42px 55px 50px 45px}
+    .map-shape svg{width:100%;height:100%;filter:drop-shadow(0 20px 25px rgba(8,70,110,.10))}
+    .pin{position:absolute;transform:translate(-50%,-50%);border:0;background:transparent;cursor:pointer;color:var(--blue-900);font-weight:800;font-size:.78rem;text-align:center;z-index:3}
+    .pin span{display:block;background:#fff;padding:6px 9px;border-radius:999px;box-shadow:0 8px 18px rgba(4,50,79,.12);white-space:nowrap;border:1px solid #c9e2ee}
+    .pin::before{content:"";display:block;width:16px;height:16px;border-radius:50%;background:var(--blue-600);border:4px solid #fff;box-shadow:0 5px 16px rgba(8,112,184,.30);margin:0 auto 5px;transition:.2s ease}
+    .pin:hover::before,.pin.active::before{transform:scale(1.25);background:var(--blue-900)}
+    .pin.p1{left:25%;top:36%}.pin.p2{left:36%;top:48%}.pin.p3{left:58%;top:39%}.pin.p4{left:70%;top:61%}.pin.p5{left:49%;top:70%}
+    .zone-info{border-radius:28px;background:var(--blue-950);padding:36px;color:#fff;display:flex;flex-direction:column;justify-content:space-between}
+    .zone-info p{color:#c3deeb}
+    .zone-info h3{font-size:2rem;margin:8px 0 16px}
+    .zone-list{display:grid;gap:10px;margin-top:26px}
+    .zone-list div{padding:13px 14px;border-radius:13px;border:1px solid rgba(255,255,255,.13);background:rgba(255,255,255,.06);font-size:.88rem;color:#d5e9f3}
+    .map-caption{position:absolute;left:25px;bottom:21px;font-size:.72rem;color:#537184;z-index:2}
+
+    /* Projects */
+
+    .projects-section{background:linear-gradient(145deg,#05192b 0%,#07395f 58%,#075f98 100%);color:#fff;position:relative;overflow:hidden}
+    .projects-section::before{content:"";position:absolute;width:620px;height:620px;border-radius:50%;right:-260px;top:-310px;border:1px solid rgba(255,255,255,.10);box-shadow:0 0 0 80px rgba(255,255,255,.025),0 0 0 165px rgba(255,255,255,.018)}
+    .projects-section .container{position:relative;z-index:1}
+    .projects-section .section-head p{color:#c6dfeb}
+    .projects-section .eyebrow{color:#8edfff}
+    .projects-section .project-card{border-color:rgba(255,255,255,.08)}
+    .projects-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .project-card{border:1px solid var(--line);border-radius:22px;overflow:hidden;background:#fff;transition:.25s ease}
+    .project-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-soft)}
+    .project-image{height:190px;overflow:hidden;background:var(--sky)}
+    .project-image img{width:100%;height:100%;object-fit:cover;transition:.4s ease}
+    .project-card:hover .project-image img{transform:scale(1.035)}
+    .project-body{padding:22px}
+    .project-meta{font-size:.72rem;text-transform:uppercase;letter-spacing:.1em;font-weight:850;color:var(--blue-700);margin-bottom:10px}
+    .project-body h3{font-size:1.18rem;margin-bottom:9px}
+    .project-body p{font-size:.88rem}
+    .project-link{display:inline-flex;align-items:center;gap:7px;font-size:.84rem;font-weight:800;color:var(--blue-700);margin-top:17px}
+
+    /* 2026 */
+    .y2026{background:var(--blue-950);color:#fff;overflow:hidden;position:relative}
+    .y2026::after{content:"2026";position:absolute;right:-30px;bottom:-75px;font-size:260px;font-weight:950;color:rgba(255,255,255,.025);letter-spacing:-.08em;line-height:1;pointer-events:none}
+    .y2026 .section-head p{color:#bcd7e5}
+    .y2026 .eyebrow{color:#8edfff}
+    .updates{display:grid;grid-template-columns:1.1fr .9fr;gap:18px;position:relative;z-index:2}
+    .update-feature{border-radius:24px;padding:34px;background:linear-gradient(145deg,#0a4f81,#0870b8);min-height:420px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:0 26px 60px rgba(0,0,0,.22)}
+    .update-feature .date{font-size:.8rem;text-transform:uppercase;letter-spacing:.1em;color:#bceaff;font-weight:800}
+    .update-feature h3{font-size:clamp(2rem,3.8vw,3.5rem);max-width:560px;margin:12px 0 16px}
+    .update-feature p{color:#d2e8f3;max-width:610px}
+    .update-feature .status{display:inline-flex;align-self:flex-start;padding:7px 10px;border-radius:999px;background:rgba(255,255,255,.12);font-size:.75rem;font-weight:800;margin-top:18px}
+    .update-list{display:grid;gap:13px}
+    .update-mini{padding:22px;border-radius:20px;border:1px solid rgba(255,255,255,.13);background:rgba(255,255,255,.055);transition:.2s ease}
+    .update-mini:hover{background:rgba(255,255,255,.09)}
+    .update-mini .date{font-size:.72rem;color:#82d9ff;text-transform:uppercase;font-weight:800;letter-spacing:.08em}
+    .update-mini h4{font-size:1.1rem;margin:7px 0 6px}
+    .update-mini p{font-size:.84rem;color:#bad4e0}
+
+    /* News */
+    .news-grid{display:grid;grid-template-columns:1.35fr .65fr .65fr;grid-template-rows:1fr 1fr;gap:16px;min-height:600px}
+    .news-card{position:relative;border-radius:24px;overflow:hidden;min-height:270px;background:#123;color:#fff}
+    .news-card.big{grid-row:1/3;min-height:600px}
+    .news-card:nth-child(2){grid-column:2/4}
+    .news-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+    .news-card::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 20%,rgba(3,23,38,.85) 100%)}
+    .news-content{position:absolute;z-index:2;left:0;right:0;bottom:0;padding:24px}
+    .news-content .date{font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:#a9e3ff;font-weight:800}
+    .news-content h3{font-size:1.22rem;margin-top:8px}
+    .news-card.big .news-content{padding:34px}
+    .news-card.big .news-content h3{font-size:2.05rem}
+
+    /* Video */
+    .video{background:var(--ice)}
+    .video-layout{display:grid;grid-template-columns:1.35fr .65fr;gap:18px}
+    .video-main{position:relative;border-radius:24px;overflow:hidden;background:#071b2c;aspect-ratio:16/9;box-shadow:var(--shadow-soft);color:#fff}
+    .video-main>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .35s ease}
+    .video-main::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(3,18,31,.08),rgba(3,18,31,.86))}
+    .video-main:hover>img{transform:scale(1.025)}
+    .video-main-content{position:absolute;z-index:2;left:0;right:0;bottom:0;padding:34px}
+    .youtube-badge{width:72px;height:50px;border-radius:14px;background:#ff0033;display:grid;place-items:center;box-shadow:0 12px 30px rgba(0,0,0,.24);margin-bottom:18px}
+    .youtube-badge svg{width:30px;height:30px;color:#fff;margin-left:3px}
+    .video-main strong{display:block;font-size:1.55rem;line-height:1.1}
+    .video-main span{display:block;margin-top:8px;color:#e7f6fd}
+    .video-side{display:grid;grid-template-rows:repeat(3,1fr);gap:12px}
+    .video-slot{border-radius:18px;background:#fff;border:1px solid var(--line);overflow:hidden;display:grid;grid-template-columns:150px 1fr;gap:0;align-items:stretch;transition:.2s ease;min-height:135px}
+    .video-slot:hover{border-color:#aad8ec;box-shadow:var(--shadow-soft);transform:translateY(-2px)}
+    .video-thumb{position:relative;min-height:135px;background:#061a2d;overflow:hidden}
+    .video-thumb img{width:100%;height:100%;object-fit:cover;display:block}
+    .video-thumb .play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);background:#ff0033;box-shadow:0 8px 22px rgba(0,0,0,.26)}
+    .video-copy{padding:17px 16px;display:flex;flex-direction:column;justify-content:center}
+    .play{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,var(--blue-600),var(--blue-800));color:#fff}
+    .play svg{width:19px;height:19px;margin-left:3px}
+    .video-slot strong{display:block;font-size:.9rem;line-height:1.22;color:var(--blue-900)}
+    .video-slot span{display:block;font-size:.76rem;line-height:1.35;color:var(--muted);margin-top:6px}
+    .video-note{margin-top:18px;font-size:.78rem;color:#6c7d89}
+
+    /* Social / contact */
+    .social-band{background:linear-gradient(135deg,var(--blue-700),var(--blue-500));color:#fff;padding:58px 0}
+    .social-inner{display:flex;align-items:center;justify-content:space-between;gap:30px}
+    .social-band h2{font-size:clamp(2rem,4vw,3.45rem)}
+    .social-band p{color:#e2f5ff;margin-top:10px;max-width:640px}
+    .contact{background:#fff}
+    .contact-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:30px}
+    .contact-card{border:1px solid var(--line);border-radius:24px;padding:32px;background:#fff;box-shadow:var(--shadow-soft)}
+    .contact-card.dark{background:var(--blue-950);color:#fff;border-color:transparent}
+    .contact-card.dark p{color:#bed8e4}
+    .contact-row{display:flex;gap:15px;margin-top:21px;align-items:flex-start}
+    .contact-icon{width:42px;height:42px;flex:0 0 auto;border-radius:13px;display:grid;place-items:center;background:var(--sky);color:var(--blue-700)}
+    .contact-card.dark .contact-icon{background:rgba(255,255,255,.10);color:#fff}
+    .contact-icon.instagram{background:linear-gradient(135deg,#833ab4,#fd1d1d,#fcb045);color:#fff}
+    .contact-icon.youtube{background:#ff0033;color:#fff}
+    .contact-row strong{display:block;color:inherit;font-size:.91rem}
+    .contact-row span,.contact-row a{font-size:.87rem;color:var(--muted)}
+    .contact-card.dark .contact-row span,.contact-card.dark .contact-row a{color:#c5dce7}
+
+    /* Footer */
+    .footer{background:#041321;color:#fff;padding:62px 0 20px}
+    .footer-grid{display:grid;grid-template-columns:1.15fr .7fr .7fr 1fr;gap:40px;align-items:start}
+    .footer-brand img{width:220px;filter:brightness(0) invert(1)}
+    .footer-brand p{color:#9eb8c5;font-size:.86rem;margin-top:18px;max-width:330px}
+    .footer h4{font-size:.87rem;text-transform:uppercase;letter-spacing:.09em;color:#d7ecf5;margin-bottom:15px}
+    .footer-links{display:grid;gap:9px;font-size:.86rem;color:#9eb8c5}
+    .footer-links a:hover{color:#fff}
+    .fd-signature{border-left:1px solid rgba(255,255,255,.12);padding-left:28px}
+    .fd-signature small{display:block;color:#829ead;margin-bottom:9px}
+    .fd-signature img{width:285px;max-width:100%;height:auto;display:block;object-fit:contain;object-position:left center;border-radius:8px}
+    .fd-signature a{display:inline-block;margin-top:5px;color:#c8dce6;font-size:.78rem}
+    .footer-bottom{display:flex;justify-content:space-between;gap:20px;padding-top:28px;margin-top:44px;border-top:1px solid rgba(255,255,255,.10);color:#75909e;font-size:.76rem}
+    .sources{margin-top:16px}
+    .sources details{font-size:.72rem;color:#7895a4}
+    .sources summary{cursor:pointer;color:#9db7c3}
+    .sources ul{padding-left:18px;margin:9px 0 0}
+    .sources a{text-decoration:underline;text-underline-offset:2px}
+
+    .reveal{opacity:0;transform:translateY(16px);transition:opacity .55s ease,transform .55s ease}
+    .reveal.visible{opacity:1;transform:none}
+
+    @media (max-width:1050px){
+      .menu{gap:14px;font-size:.84rem}.brand{width:185px}
+      .areas-grid{grid-template-columns:repeat(2,1fr)}
+      .timeline-track{grid-template-columns:repeat(3,1fr);row-gap:28px}.timeline-track::before{display:none}
+      .stats-grid{grid-template-columns:repeat(2,1fr)}
+      .projects-grid{grid-template-columns:repeat(2,1fr)}
+      .news-grid{grid-template-columns:1fr 1fr;grid-template-rows:auto}.news-card.big{grid-row:auto;grid-column:1/3;min-height:440px}.news-card:nth-child(2){grid-column:auto}
+      .footer-grid{grid-template-columns:1fr 1fr}.fd-signature{border-left:0;padding-left:0}
+    }
+    @media (max-width:820px){
+      .section{padding:74px 0}.section-head{grid-template-columns:1fr;gap:18px;margin-bottom:34px}
+      .topbar .container{justify-content:center}.topbar-note{display:none}
+      .menu{display:none;position:absolute;top:78px;left:0;right:0;background:#fff;padding:22px 20px 28px;border-bottom:1px solid var(--line);box-shadow:0 16px 40px rgba(8,45,71,.12);flex-direction:column;align-items:flex-start}
+      .menu.open{display:flex}.mobile-toggle{display:block}
+      .hero{min-height:700px}.hero-overlay{background:linear-gradient(90deg,rgba(3,25,44,.94) 0%,rgba(3,25,44,.79) 70%,rgba(3,25,44,.48) 100%)}
+      .hero h1{font-size:clamp(3.2rem,13vw,5rem)}
+      .bio-wrap,.zone-layout,.updates,.video-layout,.contact-grid{grid-template-columns:1fr}
+      .bio-photo{min-height:480px}.bio-photo .main{inset:0 30px 0 0}.bio-badge{width:190px}
+      .zone-info{min-height:360px}.map-card{min-height:500px}
+      .news-grid{grid-template-columns:1fr}.news-card.big,.news-card:nth-child(2){grid-column:auto;min-height:360px}.news-card{min-height:300px}
+      .social-inner{align-items:flex-start;flex-direction:column}
+    }
+    @media (max-width:560px){
+      .container{width:min(var(--max),calc(100% - 28px))}.nav{height:70px}.brand{width:162px}.menu{top:70px}
+      .hero{min-height:740px}.hero .container{align-items:flex-end;padding-bottom:52px}.hero-media img{object-position:70% center}.hero-overlay{background:linear-gradient(180deg,rgba(3,25,44,.23) 0%,rgba(3,25,44,.78) 40%,rgba(3,25,44,.97) 77%)}
+      .hero h1{font-size:3.3rem}.hero h1 span{font-size:.37em}.hero-sub{font-size:.97rem}.hero-foot{gap:16px}
+      .hero-actions .btn{width:100%}
+      .bio-photo{min-height:420px}.bio-photo .main{inset:0 20px 0 0}.bio-badge{width:170px;padding:18px}.bio-badge strong{font-size:2rem}
+      .stats-grid,.areas-grid,.projects-grid,.timeline-track{grid-template-columns:1fr}
+      .stat-card{padding:23px}.timeline-card{min-height:auto}
+      .map-card{min-height:430px}.map-shape{inset:30px 25px 45px}.pin span{font-size:.68rem;padding:5px 7px}.pin::before{width:14px;height:14px;border-width:3px}
+      .update-feature{min-height:390px;padding:26px}.update-feature h3{font-size:2.2rem}
+      .video-side{grid-template-rows:auto}.video-slot{grid-template-columns:135px 1fr}.footer-grid{grid-template-columns:1fr}.footer-bottom{flex-direction:column}.footer{padding-top:48px}
+      .fd-signature{padding-top:24px;border-top:1px solid rgba(255,255,255,.1)}
+    }
+    @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}*{transition:none!important}}
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="container">
+      <div class="topbar-note">Deputado Estadual • Rio de Janeiro</div>
+      <div class="top-social" aria-label="Redes sociais oficiais">
+        <a class="social-icon" href="https://www.instagram.com/depjorgefelippeneto/" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+        <a class="social-icon" href="https://www.youtube.com/@JorgeFelippeNeto" target="_blank" rel="noopener" aria-label="YouTube" title="YouTube"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12s0-4-1-6c-.5-1-1.5-1.5-2.5-1.6C16.5 4 12 4 12 4s-4.5 0-6.5.4C4.5 4.5 3.5 5 3 6c-1 2-1 6-1 6s0 4 1 6c.5 1 1.5 1.5 2.5 1.6C7.5 20 12 20 12 20s4.5 0 6.5-.4c1-.1 2-.6 2.5-1.6 1-2 1-6 1-6Z"/><path d="m10 9 5 3-5 3Z"/></svg></a>
+        <a class="social-icon" href="https://www.facebook.com/jfelippeneto" target="_blank" rel="noopener" aria-label="Facebook" title="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 8h3V4.2c-.5-.1-2.2-.2-4.1-.2C9 4 7 6.2 7 10.1V13H4v4h3v7h4v-7h3.2l.8-4H11v-2.5C11 9.3 11.3 8 14 8Z"/></svg></a>
+      </div>
+    </div>
+  </div>
+
+  <header class="header">
+    <div class="container nav">
+      <a class="brand" href="#inicio" aria-label="Início">
+        <img src="assets/images/logo-jfn.png" alt="Jorge Felippe Neto — Deputado Estadual">
+      </a>
+      <nav class="menu" id="mainMenu" aria-label="Navegação principal">
+        <a href="#historia">Minha história</a>
+        <a href="#atuacao">Atuação</a>
+        <a href="#zona-oeste">Zona Oeste</a>
+        <a href="#projetos">Projetos</a>
+        <a href="#2026">2026</a>
+        <a href="#noticias">Notícias</a>
+        <a href="acervo.html">Acervo</a>
+        <a href="#videos">Vídeos</a>
+        <a class="nav-cta" href="#contato">Contato</a>
+      </nav>
+      <button class="mobile-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="mainMenu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-media"><img src="assets/images/hero-proximidade.jpg" alt="Jorge Felippe Neto em atividade pública junto à população"></div>
+      <div class="hero-overlay"></div>
+      <div class="container">
+        <div class="hero-copy reveal">
+          <div class="hero-kicker"><span class="dot"></span> Eleições 2026 • Rio de Janeiro</div>
+          <h1>Jorge Felippe Neto <span>Candidato a Deputado Estadual em 2026</span></h1>
+          <p class="hero-sub">Advogado, nascido em Padre Miguel, pai de Jorginho e Helena e deputado estadual em seu terceiro mandato. Sua trajetória reúne experiência parlamentar e passagens pelo Executivo municipal, com atuação em diferentes áreas do Estado do Rio de Janeiro.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#historia">Conheça a trajetória
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
+            </a>
+            <a class="btn btn-light" href="#2026">Veja a atuação em 2026</a>
+          </div>
+          <div class="hero-foot">
+            <div class="hero-foot-item"><strong>3º mandato</strong><small>Deputado Estadual</small></div>
+            <div class="hero-foot-item"><strong>Padre Miguel</strong><small>Origem na Zona Oeste</small></div>
+            <div class="hero-foot-item"><strong>2014</strong><small>Primeira eleição para a ALERJ</small></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="historia">
+      <div class="container bio-wrap">
+        <div class="bio-photo reveal">
+          <div class="main"><img src="assets/images/rj-para-todos.jpg" alt="Jorge Felippe Neto em atendimento durante ação pública"></div>
+          <div class="bio-badge"><strong>2014</strong><span>primeira eleição para a Assembleia Legislativa do Estado do Rio de Janeiro</span></div>
+        </div>
+        <div class="bio-copy reveal">
+          <div class="eyebrow">Minha história</div>
+          <h2>Trajetória pública com raízes na Zona Oeste</h2>
+          <p>Jorge Felippe Neto nasceu no Rio de Janeiro, em Padre Miguel, é advogado e pai de Jorginho e Helena. A biografia institucional da ALERJ registra sua aproximação com a vida pública desde jovem, acompanhando a trajetória do avô, o vereador Jorge Felippe.</p>
+          <p>Foi eleito pela primeira vez para deputado estadual em 2014. Ao longo da carreira também passou pelo Executivo municipal, à frente das secretarias de Conservação e Meio Ambiente e de Trabalho e Renda, antes de retornar à Assembleia Legislativa.</p>
+          <div class="bio-quote">A vida pública começou cedo, acompanhando de perto a trajetória do avô, Jorge Felippe. Desde a primeira eleição para a ALERJ, em 2014, Jorge Felippe Neto acumulou experiência parlamentar e administrativa, mantendo suas raízes na Zona Oeste.</div>
+          <div class="bio-tags"><span class="tag">Advogado</span><span class="tag">Pai</span><span class="tag">Padre Miguel</span><span class="tag">Deputado Estadual</span><span class="tag">Terceiro mandato</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section stats">
+      <div class="container">
+        <div class="section-head reveal">
+          <div><div class="eyebrow">Números da trajetória</div><h2>Marcos que ajudam a contar uma história pública</h2></div>
+          <p style="color:#bfd8e4">Três mandatos na Assembleia Legislativa e uma trajetória eleitoral iniciada em 2014. Os números registram diferentes etapas de sua atuação na política fluminense.</p>
+        </div>
+        <div class="stats-grid">
+          <div class="stat-card reveal"><div class="stat-num">3</div><div class="stat-label">mandatos como deputado estadual</div></div>
+          <div class="stat-card reveal"><div class="stat-num">32.066</div><div class="stat-label">votos na primeira eleição, em 2014</div></div>
+          <div class="stat-card reveal"><div class="stat-num">43.099</div><div class="stat-label">votos na eleição de 2018</div></div>
+          <div class="stat-card reveal"><div class="stat-num">35.703</div><div class="stat-label">votos na eleição de 2022</div></div>
+        </div>
+        <div class="stat-note">Da primeira eleição ao terceiro mandato, cada ciclo representa uma etapa da trajetória pública construída desde 2014.</div>
+      </div>
+    </section>
+
+    <section class="section timeline" aria-labelledby="timeline-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <div><div class="eyebrow">Linha do tempo</div><h2 id="timeline-title">Da primeira eleição ao ciclo de 2026</h2></div>
+          <p>Ao longo dos anos, a atuação parlamentar se somou à experiência no Executivo municipal, em uma trajetória marcada por eleições, gestão pública e retorno à Assembleia Legislativa.</p>
+        </div>
+        <div class="timeline-track">
+          <article class="timeline-item reveal"><div class="timeline-dot">2014</div><div class="timeline-card"><h3>Primeira eleição</h3><p>Eleito deputado estadual em sua primeira disputa eleitoral, com 32.066 votos.</p></div></article>
+          <article class="timeline-item reveal"><div class="timeline-dot">2017</div><div class="timeline-card"><h3>Conservação e Meio Ambiente</h3><p>Assume a Secretaria Municipal de Conservação e Meio Ambiente do Rio.</p></div></article>
+          <article class="timeline-item reveal"><div class="timeline-dot">2018</div><div class="timeline-card"><h3>Reeleição</h3><p>Reeleito deputado estadual com 43.099 votos.</p></div></article>
+          <article class="timeline-item reveal"><div class="timeline-dot">2021</div><div class="timeline-card"><h3>Trabalho e Renda</h3><p>Assume a Secretaria Municipal de Trabalho e Renda.</p></div></article>
+          <article class="timeline-item reveal"><div class="timeline-dot">2022</div><div class="timeline-card"><h3>Terceiro mandato</h3><p>Reeleito para a ALERJ com 35.703 votos.</p></div></article>
+          <article class="timeline-item reveal"><div class="timeline-dot">2026</div><div class="timeline-card"><h3>Novo ciclo</h3><p>Ingressa no PL em abril e comunica candidatura a deputado estadual nas redes oficiais.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="atuacao">
+      <div class="container">
+        <div class="section-head reveal">
+          <div><div class="eyebrow">Áreas de atuação</div><h2>Temas organizados por prioridade e histórico de atuação</h2></div>
+          <p>A atuação reúne iniciativas, projetos e debates em diferentes frentes. Segurança, Trabalho e Renda e Defesa das Mulheres aparecem entre os temas de maior destaque, ao lado de saúde, meio ambiente, regularização fundiária, proteção animal e infraestrutura.</p>
+        </div>
+        <div class="areas-grid">
+          <article class="area-card reveal"><div class="area-rank">01</div><div class="area-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg></div><h3>Segurança</h3><p>Projetos, fiscalização e conteúdos ligados à segurança pública e à presença do poder público nos bairros.</p></article>
+          <article class="area-card reveal"><div class="area-rank">02</div><div class="area-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7h18v12H3z"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 12h18"/></svg></div><h3>Trabalho e Renda</h3><p>Qualificação profissional, centros de emprego e políticas voltadas à geração de oportunidades.</p></article>
+          <article class="area-card reveal"><div class="area-rank">03</div><div class="area-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-4.35-7-10a4 4 0 0 1 7-2.65A4 4 0 0 1 19 11c0 5.65-7 10-7 10Z"/></svg></div><h3>Defesa das Mulheres</h3><p>Propostas de proteção, prevenção à violência e acesso a informações e serviços públicos.</p></article>
+          <article class="area-card reveal"><div class="area-rank">04</div><div class="area-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Z"/><path d="M12 7v10M7 12h10"/></svg></div><h3>Saúde</h3><p>Atendimento, prevenção e expansão de equipamentos e serviços de saúde.</p></article>
+          <article class="area-card reveal"><div class="area-rank">05</div><div class="area-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 4c-8 0-14 4-14 10 0 4 3 6 6 6 6 0 8-8 8-16Z"/><path d="M4 20c2-5 5-8 10-11"/></svg></div><h3>Meio Ambiente</h3><p>Comissão de Defesa do Meio Ambiente, mobilidade sustentável e governança ambiental.</p></article>
+          <article class="area-card reveal"><div class="area-rank">06</div><div class="area-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 11 9-8 9 8"/><path d="M5 10v10h14V10M9 20v-6h6v6"/></svg></div><h3>Regularização Fundiária</h3><p>Segurança jurídica da moradia e iniciativas de regularização em diferentes regiões do estado.</p></article>
+          <article class="area-card reveal"><div class="area-rank">07</div><div class="area-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 10c0-2 1-4 3-4 1 0 2 .5 2 1.5C12 6.5 13 6 14 6c2 0 3 2 3 4 0 5-5 8-5 8s-5-3-5-8Z"/><path d="M5 6 3 4M19 6l2-2"/></svg></div><h3>Defesa dos Animais</h3><p>Projetos e fiscalização de políticas de proteção e bem-estar animal.</p></article>
+          <article class="area-card reveal"><div class="area-rank">08</div><div class="area-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 20V10l8-6 8 6v10"/><path d="M9 20v-6h6v6M2 20h20"/></svg></div><h3>Infraestrutura</h3><p>Demandas de bairros, urbanização, mobilidade e melhorias de serviços públicos.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section zone" id="zona-oeste">
+      <div class="container">
+        <div class="section-head reveal">
+          <div><div class="eyebrow">Zona Oeste</div><h2>Da Zona Oeste para diferentes regiões do Rio</h2></div>
+          <p>Nascido em Padre Miguel, Jorge Felippe Neto mantém uma trajetória ligada à Zona Oeste. Explore alguns dos bairros presentes em ações, notícias e iniciativas registradas ao longo de sua atuação pública.</p>
+        </div>
+        <div class="zone-layout">
+          <div class="map-card reveal">
+            <div class="map-shape" aria-hidden="true">
+              <svg viewBox="0 0 800 480" preserveAspectRatio="none">
+                <path d="M60,225 C120,90 270,40 395,86 C492,121 570,80 690,130 C755,158 765,244 712,287 C665,325 657,406 564,421 C460,438 405,385 319,410 C208,442 117,391 74,314 C55,280 48,251 60,225Z" fill="#fff" stroke="#9dcde3" stroke-width="3"/>
+                <path d="M140 305C234 265 277 165 404 164c93 0 141 71 248 84" fill="none" stroke="#d0e8f3" stroke-width="10" stroke-linecap="round"/>
+                <path d="M160 157c90 78 169 129 267 176 57 27 118 31 182 10" fill="none" stroke="#e1f1f8" stroke-width="7" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <button class="pin p1 active" data-place="Padre Miguel" data-text="Origem biográfica registrada pela ALERJ e pelo site oficial."><span>Padre Miguel</span></button>
+            <button class="pin p2" data-place="Bangu" data-text="Conteúdos do acervo incluem Segurança Presente e ações de saúde na região."><span>Bangu</span></button>
+            <button class="pin p3" data-place="Campo Grande" data-text="O acervo do site reúne conteúdos de saúde e segurança relacionados à região."><span>Campo Grande</span></button>
+            <button class="pin p4" data-place="Santa Cruz" data-text="A home atual registra ação do RJ Para Todos em Santa Cruz."><span>Santa Cruz</span></button>
+            <button class="pin p5" data-place="Guaratiba" data-text="O site registra ações de infraestrutura em Guaratiba."><span>Guaratiba</span></button>
+            <div class="map-caption">Mapa esquemático para organização editorial — não representa limites geográficos oficiais.</div>
+          </div>
+          <aside class="zone-info reveal">
+            <div>
+              <div class="eyebrow" style="color:#8adfff">Ponto selecionado</div>
+              <h3 id="placeTitle">Padre Miguel</h3>
+              <p id="placeText">Origem biográfica registrada pela ALERJ e pelo site oficial.</p>
+              <div class="zone-list">
+                <div>✓ Navegação por território</div>
+                <div>✓ Notícias e projetos vinculados ao local</div>
+                <div>✓ Acesso a notícias e ações por região</div>
+              </div>
+            </div>
+            <a class="btn btn-light" href="https://jorgefelippeneto.com.br/mandato/zona-oeste/" target="_blank" rel="noopener">Conheça a atuação na Zona Oeste</a>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section projects-section" id="projetos">
+      <div class="container">
+        <div class="section-head reveal">
+          <div><div class="eyebrow">Projetos e ações em destaque</div><h2>Projetos e ações que marcam diferentes frentes de atuação</h2></div>
+          <p>Da proteção às mulheres à segurança pública, passando por trabalho, regularização fundiária e meio ambiente, estas iniciativas representam algumas das frentes presentes na atuação parlamentar e administrativa de Jorge Felippe Neto.</p>
+        </div>
+        <div class="projects-grid">
+          <article class="project-card reveal"><div class="project-image"><img src="assets/images/seguranca-publica.jpg" alt="Atividade ligada à segurança pública"></div><div class="project-body"><div class="project-meta">Defesa das Mulheres • Segurança</div><h3>Cadastro Mulher Mais Alerta</h3><p>Projeto que prevê notificação a mulheres ameaçadas sobre eventual libertação de companheiros presos, aprovado em primeira discussão na ALERJ em março de 2026.</p><a class="project-link" href="https://www.alerj.rj.gov.br/Visualizar/Noticia/83161" target="_blank" rel="noopener">Saiba mais →</a></div></article>
+          <article class="project-card reveal"><div class="project-image"><img src="assets/images/viaturas.jpg" alt="Entrega de viaturas em atividade pública"></div><div class="project-body"><div class="project-meta">Segurança • Zona Oeste</div><h3>Segurança nos bairros</h3><p>O site oficial destaca atuação relacionada à segurança pública na Zona Oeste e registra a chegada do Segurança Presente a Bangu.</p><a class="project-link" href="https://jorgefelippeneto.com.br/mandato/zona-oeste/" target="_blank" rel="noopener">Saiba mais →</a></div></article>
+          <article class="project-card reveal"><div class="project-image"><img src="assets/images/rj-para-todos.jpg" alt="Atendimento em ação pública"></div><div class="project-body"><div class="project-meta">Trabalho e Renda</div><h3>Qualificação e empregabilidade</h3><p>A biografia da ALERJ registra parcerias de formação profissional, reabertura de Centros de Emprego e atuação em políticas de trabalho e renda.</p><a class="project-link" href="https://www.alerj.rj.gov.br/Deputados/PerfilDeputado/389?Legislatura=20" target="_blank" rel="noopener">Saiba mais →</a></div></article>
+          <article class="project-card reveal"><div class="project-image"><img src="assets/images/hospital-olho.jpg" alt="Atividade pública ligada a equipamento de saúde"></div><div class="project-body"><div class="project-meta">Educação • Mandato</div><h3>Ensino em tempo integral</h3><p>A biografia institucional registra proposta apresentada no primeiro mandato determinando regime de horário integral nas escolas estaduais.</p><a class="project-link" href="https://www.alerj.rj.gov.br/Deputados/PerfilDeputado/389?Legislatura=20" target="_blank" rel="noopener">Saiba mais →</a></div></article>
+          <article class="project-card reveal"><div class="project-image"><img src="assets/images/guaratiba.jpg" alt="Atividade em área de infraestrutura e urbanização"></div><div class="project-body"><div class="project-meta">Moradia • Regularização</div><h3>Regularização fundiária</h3><p>O acervo oficial reúne ações e projetos voltados à segurança jurídica da moradia na capital e em municípios do interior.</p><a class="project-link" href="https://jorgefelippeneto.com.br/mandato/regularizacao-fundiaria/" target="_blank" rel="noopener">Saiba mais →</a></div></article>
+          <article class="project-card reveal"><div class="project-image"><img src="assets/images/angra.webp" alt="Angra dos Reis"></div><div class="project-body"><div class="project-meta">Meio Ambiente • 2026</div><h3>Governança ambiental</h3><p>Em 2026, a Comissão de Meio Ambiente presidida por Jorge Felippe Neto promoveu ações de governança ambiental e debates sobre desenvolvimento sustentável.</p><a class="project-link" href="https://www.alerj.rj.gov.br/Visualizar/Noticia/86131" target="_blank" rel="noopener">Saiba mais →</a></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section y2026" id="2026">
+      <div class="container">
+        <div class="section-head reveal">
+          <div><div class="eyebrow">2026</div><h2>2026: atuação pública e um novo ciclo eleitoral</h2></div>
+          <p>O ano reúne novos projetos, debates na Assembleia Legislativa, atividades institucionais e a candidatura a deputado estadual. Acompanhe os principais acontecimentos registrados ao longo de 2026.</p>
+        </div>
+        <div class="updates">
+          <article class="update-feature reveal">
+            <div><div class="date">Julho de 2026</div><h3>Candidatura a Deputado Estadual</h3><p>Em publicação no perfil oficial do Instagram, Jorge Felippe Neto comunicou sua candidatura a deputado estadual no Rio de Janeiro para as eleições de 2026.</p><span class="status">Informação publicada em canal oficial</span></div>
+            <a class="btn btn-light" href="https://www.instagram.com/depjorgefelippeneto/" target="_blank" rel="noopener">Acessar Instagram oficial</a>
+          </article>
+          <div class="update-list">
+            <a class="update-mini reveal" href="https://www.alerj.rj.gov.br/Visualizar/Noticia/83161" target="_blank" rel="noopener"><div class="date">11 mar 2026</div><h4>Mulher Mais Alerta avança na ALERJ</h4><p>Projeto de autoria de Jorge Felippe Neto aprovado em primeira discussão.</p></a>
+            <a class="update-mini reveal" href="https://www.alerj.rj.gov.br/Visualizar/Noticia/83711" target="_blank" rel="noopener"><div class="date">06 abr 2026</div><h4>Ingresso no PL</h4><p>A mudança partidária é registrada pela ALERJ em abril de 2026.</p></a>
+            <a class="update-mini reveal" href="https://www.alerj.rj.gov.br/Visualizar/Noticia/84751" target="_blank" rel="noopener"><div class="date">15 mai 2026</div><h4>Debate sobre turismo em Angra</h4><p>Participação como presidente do colegiado em discussão sobre a taxa de turismo.</p></a>
+            <a class="update-mini reveal" href="https://www.alerj.rj.gov.br/Visualizar/Noticia/86131" target="_blank" rel="noopener"><div class="date">01 jul 2026</div><h4>Governança Ambiental</h4><p>Comissão promove exposição no Palácio Tiradentes reunindo órgãos ambientais.</p></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="noticias">
+      <div class="container">
+        <div class="section-head reveal">
+          <div><div class="eyebrow">Notícias</div><h2>Notícias e acontecimentos em destaque</h2></div>
+          <p>Acompanhe ações, projetos, entregas e acontecimentos relacionados à atuação pública de Jorge Felippe Neto no Rio de Janeiro.</p>
+        </div>
+        <div class="news-grid">
+          <a class="news-card big reveal" href="https://jorgefelippeneto.com.br/mamografo-movel-no-bangu-shopping/" target="_blank" rel="noopener"><img src="assets/images/mamografo-bangu.jpg" alt="Mamógrafo móvel em Bangu"><div class="news-content"><div class="date">30 out 2025 • Saúde</div><h3>Mamógrafo móvel no Bangu Shopping</h3></div></a>
+          <a class="news-card reveal" href="https://jorgefelippeneto.com.br/mais-infraestrutura-em-guaratiba/" target="_blank" rel="noopener"><img src="assets/images/guaratiba.jpg" alt="Atividade de infraestrutura em Guaratiba"><div class="news-content"><div class="date">10 set 2025 • Zona Oeste</div><h3>Mais infraestrutura em Guaratiba</h3></div></a>
+          <a class="news-card reveal" href="https://jorgefelippeneto.com.br/hospital-do-olho-da-zona-oeste-e-inaugurado/" target="_blank" rel="noopener"><img src="assets/images/hospital-olho.jpg" alt="Hospital do Olho da Zona Oeste"><div class="news-content"><div class="date">04 ago 2025 • Saúde</div><h3>Hospital do Olho da Zona Oeste</h3></div></a>
+          <a class="news-card reveal" href="https://jorgefelippeneto.com.br/rjparatodos-foi-para-santa-cruz/" target="_blank" rel="noopener"><img src="assets/images/rj-para-todos.jpg" alt="Ação RJ Para Todos em Santa Cruz"><div class="news-content"><div class="date">08 out 2025 • Zona Oeste</div><h3>RJ Para Todos em Santa Cruz</h3></div></a>
+        </div>
+        <div style="margin-top:26px;text-align:center"><a class="btn btn-outline" href="acervo.html">Ver todo o acervo</a></div>
+      </div>
+    </section>
+
+    <section class="section video" id="videos">
+      <div class="container">
+        <div class="section-head reveal">
+          <div><div class="eyebrow">Vídeos</div><h2>Jorge Felippe Neto em vídeo</h2></div>
+          <p>Entrevistas, registros de atividades públicas e conteúdos sobre o mandato também podem ser acompanhados pelo canal oficial no YouTube.</p>
+        </div>
+        <div class="video-layout">
+          <a class="video-main reveal" href="https://www.youtube.com/@JorgeFelippeNeto" target="_blank" rel="noopener" aria-label="Acessar canal oficial de Jorge Felippe Neto no YouTube">
+            <img src="assets/images/hero-proximidade.jpg" alt="Jorge Felippe Neto em atividade pública">
+            <div class="video-main-content">
+              <div class="youtube-badge"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31.2 31.2 0 0 0 0 12a31.2 31.2 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31.2 31.2 0 0 0 24 12a31.2 31.2 0 0 0-.5-5.8ZM9.6 15.6V8.4l6.3 3.6-6.3 3.6Z"/></svg></div>
+              <strong>Canal oficial de Jorge Felippe Neto</strong>
+              <span>Entrevistas, pronunciamentos, projetos e registros da atuação pública.</span>
+            </div>
+          </a>
+          <div class="video-side">
+            <a class="video-slot reveal" href="https://www.youtube.com/watch?v=uJ_jKI8lTGY" target="_blank" rel="noopener">
+              <div class="video-thumb"><img src="https://img.youtube.com/vi/uJ_jKI8lTGY/hqdefault.jpg" alt="Miniatura do vídeo Alerj Entrevista sobre Segurança"><div class="play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div></div>
+              <div class="video-copy"><strong>Alerj Entrevista: Segurança</strong><span>Jorge Felippe Neto fala sobre segurança pública em entrevista à TV ALERJ.</span></div>
+            </a>
+            <a class="video-slot reveal" href="https://www.youtube.com/watch?v=MvIOj5WOBIA" target="_blank" rel="noopener">
+              <div class="video-thumb"><img src="https://img.youtube.com/vi/MvIOj5WOBIA/hqdefault.jpg" alt="Miniatura de entrevista com Jorge Felippe Neto"><div class="play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div></div>
+              <div class="video-copy"><strong>Entrevista com Jorge Felippe Neto</strong><span>Conversa sobre trajetória, mandato e atuação parlamentar.</span></div>
+            </a>
+            <a class="video-slot reveal" href="https://www.youtube.com/watch?v=zyr6lVOVzFs" target="_blank" rel="noopener">
+              <div class="video-thumb"><img src="https://img.youtube.com/vi/zyr6lVOVzFs/hqdefault.jpg" alt="Miniatura de vídeo histórico no canal Jorge Felippe Neto"><div class="play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div></div>
+              <div class="video-copy"><strong>Vamos à luta com essa juventude!</strong><span>Registro histórico publicado no canal oficial de Jorge Felippe Neto.</span></div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="social-band">
+      <div class="container social-inner reveal">
+        <div><h2>Acompanhe os canais oficiais</h2><p>Acompanhe notícias, agendas, vídeos e atualizações publicadas diretamente nos perfis oficiais de Jorge Felippe Neto.</p></div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap"><a class="btn btn-light" href="https://www.instagram.com/depjorgefelippeneto/" target="_blank" rel="noopener">Instagram</a><a class="btn btn-light" href="https://www.youtube.com/@JorgeFelippeNeto" target="_blank" rel="noopener">YouTube</a></div>
+      </div>
+    </section>
+
+    <section class="section contact" id="contato">
+      <div class="container">
+        <div class="section-head reveal">
+          <div><div class="eyebrow">Contato</div><h2>Fale com Jorge Felippe Neto</h2></div>
+          <p>Consulte os canais institucionais do gabinete e acompanhe as atualizações pelos perfis oficiais nas redes sociais.</p>
+        </div>
+        <div class="contact-grid">
+          <div class="contact-card dark reveal">
+            <h3 style="font-size:1.65rem">Gabinete / ALERJ</h3>
+            <p style="margin-top:9px">Entre em contato com o gabinete parlamentar na Assembleia Legislativa do Estado do Rio de Janeiro.</p>
+            <div class="contact-row"><div class="contact-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11 12 3l9 8"/><path d="M5 10v10h14V10"/></svg></div><div><strong>ALERJ</strong><span>Rua da Ajuda, nº 05, Centro, Rio de Janeiro — CEP 20040-000</span></div></div>
+            <div class="contact-row"><div class="contact-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.33 1.78.62 2.63a2 2 0 0 1-.45 2.11L8 9.73a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.85.29 1.73.5 2.63.62A2 2 0 0 1 22 16.92Z"/></svg></div><div><strong>Telefone</strong><a href="tel:+552125881324">(21) 2588-1324</a></div></div>
+            <div class="contact-row"><div class="contact-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="m22 6-10 7L2 6"/></svg></div><div><strong>E-mail</strong><a href="mailto:jorgefelippeneto@alerj.rj.gov.br">jorgefelippeneto@alerj.rj.gov.br</a></div></div>
+          </div>
+          <div class="contact-card reveal">
+            <h3 style="font-size:1.65rem;color:var(--blue-900)">Canais digitais</h3>
+            <p style="margin-top:9px">Acompanhe a atuação, os vídeos e as atualizações de Jorge Felippe Neto pelos canais digitais oficiais.</p>
+            <div class="contact-row"><div class="contact-icon instagram"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></div><div><strong>Instagram</strong><a href="https://www.instagram.com/depjorgefelippeneto/" target="_blank" rel="noopener">@depjorgefelippeneto</a></div></div>
+            <div class="contact-row"><div class="contact-icon youtube"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12s0-4-1-6c-.5-1-1.5-1.5-2.5-1.6C16.5 4 12 4 12 4s-4.5 0-6.5.4C4.5 4.5 3.5 5 3 6c-1 2-1 6-1 6s0 4 1 6c.5 1 1.5 1.5 2.5 1.6C7.5 20 12 20 12 20s4.5 0 6.5-.4c1-.1 2-.6 2.5-1.6 1-2 1-6 1-6Z"/><path d="m10 9 5 3-5 3Z"/></svg></div><div><strong>YouTube</strong><a href="https://www.youtube.com/@JorgeFelippeNeto" target="_blank" rel="noopener">@JorgeFelippeNeto</a></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand"><img src="assets/images/logo-jfn-branco.png" alt="Jorge Felippe Neto"><p>Trajetória, mandato, projetos, notícias e canais oficiais de Jorge Felippe Neto.</p></div>
+        <div><h4>Navegação</h4><div class="footer-links"><a href="#historia">Minha história</a><a href="#atuacao">Atuação</a><a href="#zona-oeste">Zona Oeste</a><a href="#projetos">Projetos</a><a href="#2026">2026</a><a href="acervo.html">Acervo</a></div></div>
+        <div><h4>Canais</h4><div class="footer-links"><a href="https://www.instagram.com/depjorgefelippeneto/" target="_blank" rel="noopener">Instagram</a><a href="https://www.youtube.com/@JorgeFelippeNeto" target="_blank" rel="noopener">YouTube</a><a href="https://www.facebook.com/jfelippeneto" target="_blank" rel="noopener">Facebook</a><a href="#contato">Contato</a></div></div>
+        <div class="fd-signature"><small>Site desenvolvido por</small><img src="assets/images/logo-fd-azul.png" alt="F&D Consultancy"><a href="/" target="_blank" rel="noopener">fedconsultancy.com.br</a></div>
+      </div>
+      <div class="footer-bottom"><span>© 2026 Jorge Felippe Neto. Todos os direitos reservados.</span><span>Desenvolvimento: F&D Consultancy</span></div>
+    </div>
+  </footer>
+
+  <script>
+    const toggle=document.querySelector('.mobile-toggle');
+    const menu=document.getElementById('mainMenu');
+    toggle.addEventListener('click',()=>{const open=menu.classList.toggle('open');toggle.setAttribute('aria-expanded',open);});
+    menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{menu.classList.remove('open');toggle.setAttribute('aria-expanded','false')}));
+
+    const placeTitle=document.getElementById('placeTitle');
+    const placeText=document.getElementById('placeText');
+    document.querySelectorAll('.pin').forEach(pin=>pin.addEventListener('click',()=>{
+      document.querySelectorAll('.pin').forEach(p=>p.classList.remove('active'));
+      pin.classList.add('active');
+      placeTitle.textContent=pin.dataset.place;
+      placeText.textContent=pin.dataset.text;
+    }));
+
+    const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}}),{threshold:.08});
+    document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+  </script>
+</body>
+</html>
