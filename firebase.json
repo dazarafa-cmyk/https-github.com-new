@@ -8,6 +8,21 @@
     ],
     "redirects": [
       {
+        "source": "/brlink/bi",
+        "destination": "https://fedconsulting.tech",
+        "type": 302
+      },
+      {
+        "source": "/brlink/bi/",
+        "destination": "https://fedconsulting.tech",
+        "type": 302
+      },
+      {
+        "source": "/brlink/bi/index.html",
+        "destination": "https://fedconsulting.tech",
+        "type": 302
+      },
+      {
         "source": "/bi",
         "destination": "/BI/index.html",
         "type": 302
